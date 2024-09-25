@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417970120063",
+    "project_id": "driver-3d757",
+    "storage_bucket": "driver-3d757.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417970120063:android:54b262a662ae5ae06c664a",
+        "android_client_info": {
+          "package_name": "com.example.rentapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDomuhsaqTv4Gr5b9E4NmkwCM_4DWtl6u0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
