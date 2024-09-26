@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:rentapp/presentation/page/car_details_page.dart';
 import 'package:rentapp/presentation/page/car_list_screen.dart';
 import 'package:rentapp/presentation/page/onboarding_page.dart';
 import 'firebase_options.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
+      // home: OnboardingPage(),
       home: OnboardingPage(),
     );
   }
