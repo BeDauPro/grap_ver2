@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rentapp/data.models/car.dart';
+import 'package:rentapp/presentation/page/MapDetailsPage.dart';
 import 'package:rentapp/presentation/widgets/car_card.dart';
 import 'package:rentapp/presentation/widgets/more_card.dart';
 
@@ -22,12 +23,14 @@ class CarDetailsPage extends StatelessWidget {
       ),
       body: Column(
         children: [
+          //thẻ ô tô đầu tiên
           CarCard(car: Car(model: car.model, distance: car.distance, fuelCapacity: car.fuelCapacity, pricePerHour: car.pricePerHour)),
-          SizedBox(height: 20,),
+          SizedBox(height: 30,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
+                //thẻ thông tin người chở
                 Expanded(
                   child: Container(
                     padding: EdgeInsets.all(20),
@@ -53,22 +56,31 @@ class CarDetailsPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 20,),
+                //thẻ bản đồ
                 Expanded(
-                  child: Container(
-                    height: 170,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(
-                            image: AssetImage('assets/maps.png'),
-                            fit: BoxFit.cover
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black12,
-                              blurRadius: 10,
-                              spreadRadius: 5
-                          )
-                        ]
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=> Mapdetailspage(car: car))
+                      );
+                    },
+                    child: Container(
+                      height: 170,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              image: AssetImage('assets/maps.png'),
+                              fit: BoxFit.cover
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black12,
+                                blurRadius: 10,
+                                spreadRadius: 5
+                            )
+                          ]
+                      ),
                     ),
                   ),
                 )
@@ -80,9 +92,9 @@ class CarDetailsPage extends StatelessWidget {
             child: Column(
               children: [
                 MoreCard(car: Car(model: car.model + " -1", distance: car.distance+213, fuelCapacity: car.fuelCapacity, pricePerHour: car.pricePerHour+30)),
-                SizedBox(height: 5,),
+                SizedBox(height: 10,),
                 MoreCard(car: Car(model: car.model+ " -2", distance: car.distance+222, fuelCapacity: car.fuelCapacity, pricePerHour: car.pricePerHour)),
-                SizedBox(height: 5,),
+                SizedBox(height: 10,),
                 MoreCard(car: Car(model: car.model+ " -3", distance: car.distance, fuelCapacity: car.fuelCapacity+200, pricePerHour: car.pricePerHour+70)),
               ],
             ),
